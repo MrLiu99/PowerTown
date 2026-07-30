@@ -1,0 +1,114 @@
+{
+    "equipments": [
+      {
+        "name": "LED主照明",
+        "power_rating": 25.0,
+        "category": "照明",
+        "usage_pattern": {
+          "work_hours": [18, 22],
+          "off_hours_factor": 0.1,
+          "weekend_factor": 1.0
+        },
+        "description": "位于主人房公共休息室的主灯，晚间使用"
+      },
+      {
+        "name": "貂蝉绘画台灯",
+        "power_rating": 9.0,
+        "category": "照明",
+        "usage_pattern": {
+          "work_hours": [14, 17],
+          "off_hours_factor": 0.0,
+          "weekend_factor": 1.0
+        },
+        "description": "置于主人房书桌上的台灯，供貂蝉下午作画使用"
+      },
+      {
+        "name": "吕布阅读灯",
+        "power_rating": 12.0,
+        "category": "照明",
+        "usage_pattern": {
+          "work_hours": [19, 21],
+          "off_hours_factor": 0.0,
+          "weekend_factor": 1.0
+        },
+        "description": "安装在主人房床头的阅读灯，吕布晚间使用"
+      },
+      {
+        "name": "节能冰箱",
+        "power_rating": 45.0,
+        "category": "家用电器",
+        "usage_pattern": {
+          "work_hours": [0, 24],
+          "off_hours_factor": 1.0,
+          "weekend_factor": 1.0
+        },
+        "description": "位于主人房烹饪区的冰箱，24小时运行"
+      },
+      {
+        "name": "电热水壶",
+        "power_rating": 1500.0,
+        "category": "厨房电器",
+        "usage_pattern": {
+          "work_hours": [8, 10, 15, 19],
+          "off_hours_factor": 0.2,
+          "weekend_factor": 1.0
+        },
+        "description": "放置于主人房烹饪区，用于烧水泡茶或咖啡"
+      },
+      {
+        "name": "电饭煲",
+        "power_rating": 600.0,
+        "category": "厨房电器",
+        "usage_pattern": {
+          "work_hours": [11, 12, 18, 19],
+          "off_hours_factor": 0.1,
+          "weekend_factor": 1.2
+        },
+        "description": "主人房烹饪区的电饭煲，用于煮饭"
+      },
+      {
+        "name": "变频空调",
+        "power_rating": 950.0,
+        "category": "环境调节",
+        "usage_pattern": {
+          "work_hours": [22, 6],
+          "off_hours_factor": 0.3,
+          "weekend_factor": 1.0
+        },
+        "description": "安装在主人房的壁挂式空调，仅夜间睡眠时开启"
+      },
+      {
+        "name": "电风扇",
+        "power_rating": 55.0,
+        "category": "环境调节",
+        "usage_pattern": {
+          "work_hours": [12, 18],
+          "off_hours_factor": 0.0,
+          "weekend_factor": 1.0
+        },
+        "description": "放置于主人房床边的落地扇，白天替代空调"
+      },
+      {
+        "name": "滚筒洗衣机",
+        "power_rating": 400.0,
+        "category": "家用电器",
+        "usage_pattern": {
+          "work_hours": [22, 24],
+          "off_hours_factor": 0.0,
+          "weekend_factor": 1.5
+        },
+        "description": "位于浴室附近（共用区域）的洗衣机，严格谷电时段运行"
+      },
+      {
+        "name": "收音机",
+        "power_rating": 6.0,
+        "category": "娱乐设备",
+        "usage_pattern": {
+          "work_hours": [19, 20],
+          "off_hours_factor": 0.0,
+          "weekend_factor": 1.0
+        },
+        "description": "放在主人房公共休息室沙发旁的收音机"
+      }
+    ]
+  }

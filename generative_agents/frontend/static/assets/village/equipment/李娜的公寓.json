@@ -1,0 +1,58 @@
+{
+    "equipments": [
+      {
+        "name": "冰柜1",
+        "power_rating": 72,
+        "category": "家用电器",
+        "description": "冰柜1，24小时运行"
+      },
+      {
+        "name": "冰柜2",
+        "power_rating": 317.3,
+        "category": "家用电器",
+        "description": "冰柜2，主要在中午运行"
+      },
+      {
+        "name": "冰箱",
+        "power_rating": 47.9,
+        "category": "家用电器",
+        "description": "冰箱24小时运行"
+      },
+      {
+        "name": "洗碗机",
+        "power_rating": 38,
+        "category": "家用电器",
+        "description": "洗碗机，主要在晚餐时间使用"
+      },
+      {
+        "name": "洗衣机",
+        "power_rating": 425.5,
+        "category": "家用电器",
+        "description": "洗衣机，主要在上午使用"
+      },
+      {
+        "name": "滚筒式烘干机",
+        "power_rating": 932.8,
+        "category": "家用电器",
+        "description": "滚筒式烘干机，主要在凌晨运行"
+      },
+      {
+        "name": "电暖器",
+        "power_rating": 967.4,
+        "category": "家用电器",
+        "description": "电暖器，全天运行"
+      },
+      {
+        "name": "电脑",
+        "power_rating": 32.4,
+        "category": "家用电器",
+        "description": "个人电脑，工作和娱乐使用"
+      },
+      {
+        "name": "电视",
+        "power_rating": 77.9,
+        "category": "家用电器",
+        "description": "电视，主要在晚上观看"
+      }
+    ]
+  }

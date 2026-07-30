@@ -1,0 +1,282 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="container-fluid">
+    <h1 style="text-align: center; margin: 20px 0;">电力小镇用电量实时监控面板</h1>
+    
+    <div class="row" style="margin-bottom: 20px;">
+        <div class="col-md-12">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h3>模拟名称: <span id="simulation-name">{{ simulation_name }}</span></h3>
+                    <button id="refresh-btn" class="btn btn-primary" onclick="refreshData()">刷新数据</button>
+                    <span id="last-update" style="margin-left: 20px;"></span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 按位置显示的电量表 -->
+    <div id="location-tables" class="row">
+        <!-- 动态生成位置表格 -->
+    </div>
+
+    <!-- 用电量趋势图 -->
+    <div class="row" style="margin-top: 30px;">
+        <div class="col-md-12">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h3>用电量趋势（最近24小时）</h3>
+                </div>
+                <div class="panel-body">
+                    <canvas id="power-chart" style="max-height: 400px;"></canvas>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<style>
+.location-card {
+    margin-bottom: 20px;
+    border: 2px solid #ddd;
+    border-radius: 8px;
+    padding: 15px;
+    background-color: #f9f9f9;
+}
+
+.location-header {
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px;
+    border-radius: 5px;
+    margin-bottom: 15px;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.agent-row {
+    background-color: white;
+    padding: 10px;
+    margin: 10px 0;
+    border-left: 4px solid #2196F3;
+    border-radius: 4px;
+}
+
+.agent-name {
+    font-weight: bold;
+    color: #2196F3;
+    font-size: 16px;
+}
+
+.activity-item {
+    padding: 5px 10px;
+    margin: 5px 0;
+    background-color: #f0f0f0;
+    border-radius: 3px;
+    font-size: 14px;
+}
+
+.power-value {
+    color: #f44336;
+    font-weight: bold;
+}
+
+.total-power {
+    font-size: 20px;
+    color: #f44336;
+    font-weight: bold;
+    text-align: right;
+    margin-top: 10px;
+    padding-top: 10px;
+    border-top: 2px solid #ddd;
+}
+</style>
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js@3.9.1/dist/chart.min.js"></script>
+{% endblock content %}
+
+{% block js_content %}
+<script>
+let powerChart = null;
+const simulationName = "{{ simulation_name }}";
+
+function formatTime(timestamp) {
+    return timestamp;
+}
+
+function refreshData() {
+    fetch(`/api/power/data?name=${simulationName}`)
+        .then(response => response.json())
+        .then(data => {
+            if (data.error) {
+                alert(data.error);
+                return;
+            }
+            
+            updateLocationTables(data);
+            document.getElementById('last-update').textContent = 
+                `最后更新: ${new Date().toLocaleTimeString()}`;
+        })
+        .catch(error => {
+            console.error('Error:', error);
+            alert('获取数据失败: ' + error);
+        });
+}
+
+function updateLocationTables(data) {
+    const container = document.getElementById('location-tables');
+    container.innerHTML = '';
+    
+    // 按位置分组显示
+    for (const [location, locationData] of Object.entries(data)) {
+        const locationCard = document.createElement('div');
+        locationCard.className = 'col-md-6';
+        locationCard.innerHTML = `
+            <div class="location-card">
+                <div class="location-header">
+                    📍 ${location}
+                </div>
+                <div class="total-power">
+                    总用电量: <span class="power-value">${locationData.total_consumption} kWh</span>
+                </div>
+                ${Object.entries(locationData.agents).map(([agentName, agentData]) => `
+                    <div class="agent-row">
+                        <div class="agent-name">👤 ${agentName}</div>
+                        <div style="margin: 10px 0;">
+                            <strong>总用电量:</strong> <span class="power-value">${agentData.total} kWh</span>
+                        </div>
+                        <div style="margin-top: 10px;">
+                            <strong>最近活动:</strong>
+                            <div style="margin-top: 5px;">
+                                ${agentData.activities.slice(-5).map(activity => `
+                                    <div class="activity-item">
+                                        <span>${activity.activity || '未知活动'}</span>
+                                        <span style="float: right;">
+                                            ${activity.equipment} → 
+                                            <span class="power-value">${activity.power_kwh.toFixed(3)} kWh</span>
+                                        </span>
+                                        <div style="font-size: 12px; color: #666; margin-top: 3px;">
+                                            ${activity.timestamp}
+                                        </div>
+                                    </div>
+                                `).join('')}
+                            </div>
+                        </div>
+                    </div>
+                `).join('')}
+            </div>
+        `;
+        container.appendChild(locationCard);
+    }
+    
+    // 如果没有数据，显示提示
+    if (Object.keys(data).length === 0) {
+        container.innerHTML = `
+            <div class="col-md-12">
+                <div class="alert alert-info">
+                    <h4>暂无数据</h4>
+                    <p>请先运行模拟生成用电量数据，或检查模拟名称是否正确。</p>
+                </div>
+            </div>
+        `;
+    }
+}
+
+function updateChart() {
+    fetch(`/api/power/history?name=${simulationName}&hours=24`)
+        .then(response => response.json())
+        .then(data => {
+            if (data.error) {
+                console.error(data.error);
+                return;
+            }
+            
+            const ctx = document.getElementById('power-chart').getContext('2d');
+            
+            // 按位置分组数据
+            const locations = new Set();
+            data.forEach(item => {
+                Object.keys(item.locations).forEach(loc => locations.add(loc));
+            });
+            
+            const datasets = Array.from(locations).map(location => ({
+                label: location,
+                data: data.map(item => item.locations[location] || 0),
+                borderColor: getRandomColor(),
+                backgroundColor: getRandomColor(0.2),
+                tension: 0.1
+            }));
+            
+            if (powerChart) {
+                powerChart.destroy();
+            }
+            
+            powerChart = new Chart(ctx, {
+                type: 'line',
+                data: {
+                    labels: data.map(item => item.hour.split(' ')[1]),
+                    datasets: datasets
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: true,
+                    scales: {
+                        y: {
+                            beginAtZero: true,
+                            title: {
+                                display: true,
+                                text: '用电量 (kWh)'
+                            }
+                        },
+                        x: {
+                            title: {
+                                display: true,
+                                text: '时间'
+                            }
+                        }
+                    },
+                    plugins: {
+                        legend: {
+                            display: true,
+                            position: 'top'
+                        },
+                        title: {
+                            display: true,
+                            text: '各位置用电量趋势'
+                        }
+                    }
+                }
+            });
+        })
+        .catch(error => {
+            console.error('Error loading chart data:', error);
+        });
+}
+
+function getRandomColor(alpha = 1) {
+    const colors = [
+        `rgba(255, 99, 132, ${alpha})`,
+        `rgba(54, 162, 235, ${alpha})`,
+        `rgba(255, 206, 86, ${alpha})`,
+        `rgba(75, 192, 192, ${alpha})`,
+        `rgba(153, 102, 255, ${alpha})`,
+        `rgba(255, 159, 64, ${alpha})`,
+    ];
+    return colors[Math.floor(Math.random() * colors.length)];
+}
+
+// 页面加载时获取数据
+document.addEventListener('DOMContentLoaded', function() {
+    refreshData();
+    updateChart();
+    
+    // 每30秒自动刷新
+    setInterval(() => {
+        refreshData();
+        updateChart();
+    }, 10000);
+});
+</script>
+{% endblock js_content %}
+

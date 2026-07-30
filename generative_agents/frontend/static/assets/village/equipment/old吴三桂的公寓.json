@@ -1,0 +1,92 @@
+{
+  "equipments": [
+    {
+      "name": "高性能台式电脑",
+      "power_rating": 420.0,
+      "category": "IT设备",
+      "usage_pattern": {
+        "work_hours": [9, 22],
+        "off_hours_factor": 0.3,
+        "weekend_factor": 0.8
+      },
+      "description": "高性能台式机，工作日长时间运行，偶尔周末加班"
+    },
+    {
+      "name": "双显示器",
+      "power_rating": 65.0,
+      "category": "IT设备",
+      "usage_pattern": {
+        "work_hours": [9, 22],
+        "off_hours_factor": 0.2,
+        "weekend_factor": 0.7
+      },
+      "description": "双屏显示器，与主机同步使用"
+    },
+    {
+      "name": "路由器/网络设备",
+      "power_rating": 12.0,
+      "category": "网络设备",
+      "usage_pattern": {
+        "work_hours": [0, 24],
+        "off_hours_factor": 1.0,
+        "weekend_factor": 1.0
+      },
+      "description": "全屋网络中枢，24小时运行"
+    },
+    {
+      "name": "电热水壶",
+      "power_rating": 1500.0,
+      "category": "厨房电器",
+      "usage_pattern": {
+        "work_hours": [8, 10, 14, 16],
+        "off_hours_factor": 0.2,
+        "weekend_factor": 1.0
+      },
+      "description": "泡咖啡/茶，上午和下午各用1-2次"
+    },
+    {
+      "name": "微波炉",
+      "power_rating": 1100.0,
+      "category": "厨房电器",
+      "usage_pattern": {
+        "work_hours": [12, 13, 19, 20],
+        "off_hours_factor": 0.1,
+        "weekend_factor": 1.2
+      },
+      "description": "加热午餐和晚餐，简单快捷"
+    },
+    {
+      "name": "空调（卧室）",
+      "power_rating": 1200.0,
+      "category": "环境调节",
+      "usage_pattern": {
+        "work_hours": [22, 8],
+        "off_hours_factor": 0.5,
+        "weekend_factor": 1.0
+      },
+      "description": "夜间睡眠时开启，夏季持续运行"
+    },
+    {
+      "name": "LED台灯",
+      "power_rating": 15.0,
+      "category": "照明",
+      "usage_pattern": {
+        "work_hours": [19, 23],
+        "off_hours_factor": 0.1,
+        "weekend_factor": 1.0
+      },
+      "description": "晚间阅读或编码辅助照明"
+    },
+    {
+      "name": "冰箱",
+      "power_rating": 50.0,
+      "category": "家用电器",
+      "usage_pattern": {
+        "work_hours": [0, 24],
+        "off_hours_factor": 1.0,
+        "weekend_factor": 1.0
+      },
+      "description": "小型单门冰箱，24小时运行"
+    }
+  ]
+}

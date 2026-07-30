@@ -1,0 +1,92 @@
+{
+  "equipments": [
+    {
+      "name": "厨房用搅拌机",
+      "power_rating": 296.2,
+      "category": "厨房电器",
+      "usage_pattern": {
+        "work_hours": [0, 24],
+        "off_hours_factor": 0.8,
+        "weekend_factor": 1.0
+      },
+      "description": "厨房用搅拌机，全天可能有使用"
+    },
+    {
+      "name": "洗碗机",
+      "power_rating": 1496.8,
+      "category": "厨房电器",
+      "usage_pattern": {
+        "work_hours": [6, 9],
+        "off_hours_factor": 0.1,
+        "weekend_factor": 1.2
+      },
+      "description": "洗碗机，主要在清晨使用"
+    },
+    {
+      "name": "洗衣机",
+      "power_rating": 72.1,
+      "category": "清洁电器",
+      "usage_pattern": {
+        "work_hours": [10, 15],
+        "off_hours_factor": 0.2,
+        "weekend_factor": 1.5
+      },
+      "description": "洗衣机，主要在白天使用"
+    },
+    {
+      "name": "滚筒式烘干机",
+      "power_rating": 56.9,
+      "category": "清洁电器",
+      "usage_pattern": {
+        "work_hours": [17, 21],
+        "off_hours_factor": 0.1,
+        "weekend_factor": 1.0
+      },
+      "description": "滚筒式烘干机，主要在傍晚使用"
+    },
+    {
+      "name": "烧水壶",
+      "power_rating": 335.8,
+      "category": "厨房电器",
+      "usage_pattern": {
+        "work_hours": [10, 15],
+        "off_hours_factor": 0.3,
+        "weekend_factor": 0.9
+      },
+      "description": "烧水壶，主要在白天使用"
+    },
+    {
+      "name": "电视",
+      "power_rating": 44.3,
+      "category": "娱乐电器",
+      "usage_pattern": {
+        "work_hours": [0, 24],
+        "off_hours_factor": 0.5,
+        "weekend_factor": 1.2
+      },
+      "description": "电视，全天可能运行"
+    },
+    {
+      "name": "立式冰箱",
+      "power_rating": 774.1,
+      "category": "制冷电器",
+      "usage_pattern": {
+        "work_hours": [12, 17],
+        "off_hours_factor": 0.2,
+        "weekend_factor": 1.0
+      },
+      "description": "立式冰箱，主要在午后运行"
+    },
+    {
+      "name": "鱼缸",
+      "power_rating": 43.6,
+      "category": "其他电器",
+      "usage_pattern": {
+        "work_hours": [11, 17],
+        "off_hours_factor": 0.3,
+        "weekend_factor": 1.0
+      },
+      "description": "鱼缸，主要在白天运行"
+    }
+  ]
+}

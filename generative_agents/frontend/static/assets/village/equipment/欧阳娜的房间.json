@@ -1,0 +1,147 @@
+{
+  "equipments": [
+    {
+      "name": "房间主照明",
+      "power_rating": 25.0,
+      "category": "照明",
+      "usage_pattern": {
+        "work_hours": [18, 23],
+        "off_hours_factor": 0.3,
+        "weekend_factor": 1.0
+      },
+      "description": "房间主照明，晚间使用"
+    },
+    {
+      "name": "浴室照明",
+      "power_rating": 15.0,
+      "category": "照明",
+      "usage_pattern": {
+        "work_hours": [6, 8],
+        "off_hours_factor": 0.2,
+        "weekend_factor": 1.0
+      },
+      "description": "浴室照明，早晨和晚间使用"
+    },
+    {
+      "name": "厨房照明",
+      "power_rating": 20.0,
+      "category": "照明",
+      "usage_pattern": {
+        "work_hours": [7, 21],
+        "off_hours_factor": 0.2,
+        "weekend_factor": 1.2
+      },
+      "description": "厨房照明，做饭和用餐时间使用"
+    },
+    {
+      "name": "公共休息室照明",
+      "power_rating": 30.0,
+      "category": "照明",
+      "usage_pattern": {
+        "work_hours": [19, 23],
+        "off_hours_factor": 0.2,
+        "weekend_factor": 1.0
+      },
+      "description": "公共休息室照明，晚间使用"
+    },
+    {
+      "name": "电饭煲",
+      "power_rating": 600.0,
+      "category": "厨房电器",
+      "usage_pattern": {
+        "work_hours": [11, 13],
+        "off_hours_factor": 0.0,
+        "weekend_factor": 1.2
+      },
+      "description": "电饭煲，主要用于午餐和晚餐"
+    },
+    {
+      "name": "微波炉",
+      "power_rating": 1100.0,
+      "category": "厨房电器",
+      "usage_pattern": {
+        "work_hours": [7, 21],
+        "off_hours_factor": 0.0,
+        "weekend_factor": 1.2
+      },
+      "description": "微波炉，加热餐食和简单烹饪"
+    },
+    {
+      "name": "电热水壶",
+      "power_rating": 1500.0,
+      "category": "厨房电器",
+      "usage_pattern": {
+        "work_hours": [6, 9],
+        "off_hours_factor": 0.0,
+        "weekend_factor": 1.0
+      },
+      "description": "电热水壶，主要用于泡茶和咖啡"
+    },
+    {
+      "name": "冰箱",
+      "power_rating": 50.0,
+      "category": "家用电器",
+      "usage_pattern": {
+        "work_hours": [0, 24],
+        "off_hours_factor": 1.0,
+        "weekend_factor": 1.0
+      },
+      "description": "冰箱，24小时运行"
+    },
+    {
+      "name": "洗衣机",
+      "power_rating": 400.0,
+      "category": "家用电器",
+      "usage_pattern": {
+        "work_hours": [10, 15],
+        "off_hours_factor": 0.0,
+        "weekend_factor": 1.5
+      },
+      "description": "洗衣机，主要在白天使用"
+    },
+    {
+      "name": "空调",
+      "power_rating": 1200.0,
+      "category": "环境调节",
+      "usage_pattern": {
+        "work_hours": [18, 23],
+        "off_hours_factor": 0.3,
+        "weekend_factor": 1.2
+      },
+      "description": "房间空调，晚间使用"
+    },
+    {
+      "name": "电视",
+      "power_rating": 100.0,
+      "category": "娱乐电器",
+      "usage_pattern": {
+        "work_hours": [19, 23],
+        "off_hours_factor": 0.1,
+        "weekend_factor": 1.5
+      },
+      "description": "电视，晚间观看"
+    },
+    {
+      "name": "笔记本电脑",
+      "power_rating": 65.0,
+      "category": "IT设备",
+      "usage_pattern": {
+        "work_hours": [9, 22],
+        "off_hours_factor": 0.2,
+        "weekend_factor": 1.2
+      },
+      "description": "笔记本电脑，欧阳娜休息时使用"
+    },
+    {
+      "name": "热水器",
+      "power_rating": 2000.0,
+      "category": "家用电器",
+      "usage_pattern": {
+        "work_hours": [6, 9],
+        "off_hours_factor": 0.5,
+        "weekend_factor": 1.0
+      },
+      "description": "热水器，早晨和晚间使用"
+    }
+  ]
+}

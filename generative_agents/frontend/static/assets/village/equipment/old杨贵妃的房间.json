@@ -1,0 +1,103 @@
+{
+  "equipments": [
+    {
+      "name": "游戏直播主机",
+      "power_rating": 580.0,
+      "category": "IT设备",
+      "usage_pattern": {
+        "work_hours": [19, 24],
+        "off_hours_factor": 0.1,
+        "weekend_factor": 1.5
+      },
+      "description": "高配直播电脑，每晚固定直播，周末加播"
+    },
+    {
+      "name": "环形补光灯",
+      "power_rating": 45.0,
+      "category": "直播设备",
+      "usage_pattern": {
+        "work_hours": [19, 24],
+        "off_hours_factor": 0.0,
+        "weekend_factor": 1.5
+      },
+      "description": "直播专用环形灯，与主机同步开启"
+    },
+    {
+      "name": "RGB氛围灯带",
+      "power_rating": 30.0,
+      "category": "直播设备",
+      "usage_pattern": {
+        "work_hours": [19, 2],
+        "off_hours_factor": 0.2,
+        "weekend_factor": 1.3
+      },
+      "description": "背景氛围灯，直播时全开，平时偶用"
+    },
+    {
+      "name": "电竞显示器",
+      "power_rating": 80.0,
+      "category": "IT设备",
+      "usage_pattern": {
+        "work_hours": [19, 24],
+        "off_hours_factor": 0.3,
+        "weekend_factor": 1.2
+      },
+      "description": "144Hz电竞屏，直播+游戏使用"
+    },
+    {
+      "name": "电热水壶",
+      "power_rating": 1500.0,
+      "category": "厨房电器",
+      "usage_pattern": {
+        "work_hours": [8, 22],
+        "off_hours_factor": 0.2,
+        "weekend_factor": 1.0
+      },
+      "description": "泡面、冲咖啡，全天不定时使用"
+    },
+    {
+      "name": "迷你冰箱",
+      "power_rating": 40.0,
+      "category": "家用电器",
+      "usage_pattern": {
+        "work_hours": [0, 24],
+        "off_hours_factor": 1.0,
+        "weekend_factor": 1.0
+      },
+      "description": "存放饮料和零食，24小时运行"
+    },
+    {
+      "name": "空调（卧室）",
+      "power_rating": 1000.0,
+      "category": "环境调节",
+      "usage_pattern": {
+        "work_hours": [0, 24],
+        "off_hours_factor": 1.0,
+        "weekend_factor": 1.0
+      },
+      "description": "直播时需恒温，夏季全天运行"
+    },
+    {
+      "name": "蓝牙音响",
+      "power_rating": 25.0,
+      "category": "娱乐设备",
+      "usage_pattern": {
+        "work_hours": [12, 24],
+        "off_hours_factor": 0.3,
+        "weekend_factor": 1.4
+      },
+      "description": "听音乐、直播背景音，白天到深夜使用"
+    },
+    {
+      "name": "手机快充站",
+      "power_rating": 18.0,
+      "category": "电子配件",
+      "usage_pattern": {
+        "work_hours": [0, 24],
+        "off_hours_factor": 0.5,
+        "weekend_factor": 1.0
+      },
+      "description": "多口快充，手机/耳机/手柄常插"
+    }
+  ]
+}

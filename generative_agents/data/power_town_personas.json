@@ -1,0 +1,90 @@
+{
+  "description": "电力小镇智能体角色配置",
+  "personas": [
+    {
+      "name": "张伟",
+      "role": "上班族居民",
+      "location": "小区1-101",
+      "default_equipments": ["照明", "电视", "空调", "电脑", "冰箱"],
+      "description": "35岁，IT公司员工，白天上班，晚上回家使用电脑和电视"
+    },
+    {
+      "name": "李娜",
+      "role": "学生",
+      "location": "小区1-102",
+      "default_equipments": ["照明", "电脑", "空调", "冰箱"],
+      "description": "20岁，大学生，白天上学，晚上在家学习使用电脑"
+    },
+    {
+      "name": "王强",
+      "role": "工厂工人",
+      "location": "工厂宿舍A-301",
+      "default_equipments": ["照明", "电视", "空调", "冰箱"],
+      "description": "28岁，工厂生产工人，三班倒工作，在工厂宿舍生活"
+    },
+    {
+      "name": "刘老师",
+      "role": "教师",
+      "location": "小区2-201",
+      "default_equipments": ["照明", "电脑", "空调", "冰箱", "电视"],
+      "description": "42岁，中学教师，白天在学校上课，晚上备课"
+    },
+    {
+      "name": "陈经理",
+      "role": "商场经理",
+      "location": "小区3-301",
+      "default_equipments": ["照明", "电视", "空调", "电脑", "冰箱", "热水器"],
+      "description": "38岁，商场经理，白天在商场工作，晚上回家休息"
+    },
+    {
+      "name": "赵大妈",
+      "role": "退休居民",
+      "location": "小区1-103",
+      "default_equipments": ["照明", "电视", "空调", "冰箱", "洗衣机"],
+      "description": "65岁，退休老人，白天在家看电视，晚上早睡"
+    },
+    {
+      "name": "孙工程师",
+      "role": "工程师",
+      "location": "小区2-202",
+      "default_equipments": ["照明", "电脑", "空调", "冰箱", "热水器"],
+      "description": "32岁，电力工程师，经常在家加班，使用电脑工作"
+    },
+    {
+      "name": "周师傅",
+      "role": "工厂技术员",
+      "location": "工厂宿舍B-202",
+      "default_equipments": ["照明", "电视", "空调", "冰箱"],
+      "description": "45岁，工厂技术员，负责设备维护，住在工厂宿舍"
+    },
+    {
+      "name": "吴同学",
+      "role": "高中生",
+      "location": "小区1-104",
+      "default_equipments": ["照明", "电脑", "空调", "冰箱"],
+      "description": "17岁，高中生，白天上学，晚上在家学习"
+    },
+    {
+      "name": "郑医生",
+      "role": "医生",
+      "location": "小区3-302",
+      "default_equipments": ["照明", "电视", "空调", "电脑", "冰箱", "热水器"],
+      "description": "40岁，医院医生，工作时间不固定，经常夜班"
+    },
+    {
+      "name": "钱教授",
+      "role": "大学教授",
+      "location": "小区2-203",
+      "default_equipments": ["照明", "电脑", "空调", "冰箱", "电视"],
+      "description": "55岁，大学教授，白天在学校上课和做研究，晚上在家备课"
+    },
+    {
+      "name": "冯工人",
+      "role": "工厂操作工",
+      "location": "工厂宿舍A-302",
+      "default_equipments": ["照明", "电视", "空调", "冰箱"],
+      "description": "26岁，工厂操作工，白班工作，下班后休息娱乐"
+    }
+  ]
+}
+
